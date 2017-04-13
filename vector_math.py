@@ -1,25 +1,17 @@
 from vector import *
 
-def vectorAdd(x, y):
-    value = []
-    for i in range(len(x.coordinates)):
-        value.append(x.coordinates[i] + y.coordinates[i])
+def add(self, v):
+    values = [x+y for x,y in zip(self.coordinates, v.coordinates)]
     return Vector(value)
 
-def vectorSubtract(x, y):
-    value = []
-    for i in range(len(x.coordinates)):
-        value.append(x.coordinates[i] - y.coordinates[i])
+def subtract(self, v):
+    values = [x-y for x,y in zip(self.coordinates, v.coordinates)]
     return Vector(value)
 
-def scalarMultiply(x, y):
-    value = []
-    for i in range(len(x.coordinates)):
-        value.append(x.coordinates[i] * y)
+def scalar_multiply(self, c):
+    values = [c*x for x in self.coordinates]
     return Vector(value)
 
-def vectorNegate(x):
-    value = []
-    for i in range(len(x.coordinates)):
-        value.append(-x.coordinates[i])
+def negate(self):
+    value = [-x for x in self.coordinates]
     return Vector(value)
