@@ -19,3 +19,19 @@ class Vector(object):
 
     def __eq__(self, v):
         return self.coordinates == v.coordinates
+
+    def add(self, v):
+        value = [x+y for x,y in zip(self.coordinates, v.coordinates)]
+        return Vector(value)
+
+    def subtract(self, v):
+        value = [x-y for x,y in zip(self.coordinates, v.coordinates)]
+        return Vector(value)
+
+    def scalar_multiply(self, c):
+        value = [c*x for x in self.coordinates]
+        return Vector(value)
+
+    def negate(self):
+        value = [-x for x in self.coordinates]
+        return Vector(value)
